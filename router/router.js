@@ -19,3 +19,19 @@ exports.dobook = function(req,res,next){
         res.send("保存成功");
     })
 }
+
+exports.booklist = function(req,res,next){
+    Book.booklist(function(err,result){
+        res.render("index",{
+        "book":result
+    })
+    })
+    
+}
+
+exports.doedit = function(req,res,next){
+    var _id = req.query.id;
+    Book.zhaoshu(_id,function(err,result){
+        res.render("edit",result[0])
+    })
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        table,tr,td{
+            border: 1px solid #ccc;
+        }
+        td{
+            padding:10px;
+        }
+    </style>
+</head>
+<body>
+    <h3>图书列表</h3>
+    <table>
+       <tr><td>图书名</td><td> 作者</td><td>价格</td><td>操作</td></tr>
+       <%for(var i=0;i<book.length;i++){%>
+            <tr><td><%=book[i].name%></td><td><%=book[i].author%></td><td><%=book[i].price%></td><td><a href="/edit?id=<%=book[i]._id%>">修改</a></td></tr>
+       <%}%>
+    </table>
+    <p><a href="/addbook">【增加图书】</a></p>
+</body>
+</html>

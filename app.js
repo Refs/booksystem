@@ -7,8 +7,13 @@ var app = express();
 
 app.set("view engine","ejs");
 
+//图书列表
+app.get("/",router.booklist);
+
+//增加图书
 app.get("/addbook",router.addbook);
-app.get("/dobook",router.dobook)
+app.get("/dobook",router.dobook);
+app.get("/edit",router.doedit);
 
 
 app.listen(3000)
